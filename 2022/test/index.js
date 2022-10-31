@@ -42,21 +42,23 @@ test('TEST ${methodName}', () => {
       // 不存在直接创建文件夹
       fs.mkdirSync(testPath);
     }
-    // 遍历代码文件
-    let list = fs.readdirSync(sourcePath);
-    list = list
+    // 遍历代码文件 这个方法 返回的就是 一些文件的名字这样
+    let list = fs.readdirSync(sourcePath, {
+      recursive: true,
+    });
+    list
       // 添加完整路径
       .map((v) => `${sourcePath}/${v}`)
-      // 只需要文件
+      // 只需要文件, 不需要文件夹
       .filter((v) => fs.statSync(v).isFile())
       // 不需要测试代码
       .filter((v) => v.indexOf("_spec") === -1)
       // 生成测试文件
       .map((v) => this.genTestFile(v));
+    // console.log(list)
   }
 
   genTestFile(filename) {
-    console.log("genTestFile", filename);
     const testFileName = this.getTestFileName(filename);
     if (fs.existsSync(testFileName)) {
       // 测试代码已经存在了
@@ -75,7 +77,8 @@ test('TEST ${methodName}', () => {
         baseFileName
       );
     }
-    return source;
+    fs.writeFileSync(testFileName, source);
+    return;
   }
 }
 
