@@ -6,6 +6,7 @@ chunkDir
 # local env files
 .env.local
 .env.*.local
+.npm-global
 
 # Log files
 npm-debug.log*

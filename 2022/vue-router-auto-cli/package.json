@@ -1,15 +1,11 @@
 {
-  "name": "2022",
+  "name": "vue-router-auto-cli",
   "version": "1.0.0",
   "description": "",
-  "main": "jest.config.js",
-  "directories": {
-    "test": "test"
+  "bin": {
+    "xjh": "./bin/xjh.js"
   },
-  "dependencies": {
-    "jest": "^29.2.2"
-  },
-  "devDependencies": {},
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
