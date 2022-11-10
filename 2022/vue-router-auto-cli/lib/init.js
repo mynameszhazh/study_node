@@ -5,18 +5,14 @@
 const { promisify } = require("util");
 const clear = require("clear");
 const chalk = require("chalk");
-// const figlet = require("figlet");
-figlet = promisify(figlet);
+figlet = promisify(require("figlet"));
 
 // const figlet = promisify(figlet1);
 const log = (content) => console.log(chalk.green(content));
 
-module.exports = (name) => {
+module.exports = async (name) => {
   // 打印欢迎界面
   clear();
-  figlet("XJH Welcome" + name).then((data) => {
-    log(data);
-  });
-  // figlet("XJH");
-  log("123");
+  const data = await figlet("XJH Welcome" + name); // figlet("XJH");
+  log(data);
 };
