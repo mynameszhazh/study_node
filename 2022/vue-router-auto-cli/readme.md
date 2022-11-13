@@ -39,3 +39,14 @@ npm i commander download-git-repo ora handlebars figlet clear chalk open -s
 ### commander
 
 - 一些 ts 代码提示的代码, 可能需要你引入不同的包 就可以进行操作了
+
+## publish.sh
+
+> 这是一种 bash 文件执行使用的一种文件格式
+
+- 它可以把, 我一系列的执行命令统一进行一个执行这样
+- mac
+  - chmod +x publish.sh
+    - 开通权限的一种操作, 这样我就可以直接执行文件了
+  - ./publish.sh
+    - 直接执行
