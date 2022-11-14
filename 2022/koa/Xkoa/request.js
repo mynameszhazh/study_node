@@ -1,8 +1,8 @@
 module.exports = {
-  get body() {
-    return this._body;
+  get url() {
+    return this.req.url;
   },
-  set body(val) {
-    this._body = val;
+  get method() {
+    return this.req.method.toLowerCase();
   },
 };
