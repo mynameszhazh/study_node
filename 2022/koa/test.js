@@ -1,8 +1,11 @@
 const Xkoa = require("./Xkoa/index.js");
 const Router = require("./router/index.js");
+const static = require("./static/index.js");
 
 const app = new Xkoa();
 const router = new Router();
+
+app.use(static(__dirname + "/public"));
 
 router.get("/index", async (ctx) => {
   console.log("index", ctx.url);
