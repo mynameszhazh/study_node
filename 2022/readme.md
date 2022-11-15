@@ -26,4 +26,4 @@
 - [cli](./vue-router-auto-cli/readme.md)
 
 ## koa
-- [koa](./koa/readme.md)
+  - 如果多包了一层函数, 那么一些传递一些参数的时候,就可以很好的携带一些参数这样

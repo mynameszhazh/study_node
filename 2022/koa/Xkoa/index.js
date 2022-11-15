@@ -15,7 +15,8 @@ class Xkoa {
       this.ctx = this.createContext(req, res);
       this.compose()();
       // 最后执行我的一些代码
-      res.end(JSON.stringify(this.ctx.body));
+      // res.end(JSON.stringify(this.ctx.body));
+      res.end(this.ctx.body)
     });
     server.listen(...arg);
   }
