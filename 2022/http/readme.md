@@ -20,3 +20,7 @@
   const img = new Image();
   img.src = "/api/user?button";
   ```
+
+## cross
+
+- [cross](./document/cross.md)
