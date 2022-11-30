@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/mynameszhazh/study_node/issues"
   },
-  "homepage": "https://github.com/mynameszhazh/study_node#readme"
+  "homepage": "https://github.com/mynameszhazh/study_node#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
