@@ -4,7 +4,6 @@ const fs = require("fs");
 const app = http.createServer((req, res) => {
   let { url, method } = req;
   console.log(url, method, "method");
-  console.log("cookie:", req.headers.cookie);
   if (method === "GET" && url === "/") {
     fs.readFile("./index.html", (err, data) => {
       if (!err) {
@@ -19,6 +18,18 @@ const app = http.createServer((req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
     res.setHeader("Set-Cookie", "cookie=val222");
     res.end(JSON.stringify([{ name: "xjh" }]));
+  } else if (method === "POST" && url === "/api/save") {
+    let reqData = [];
+    let size = 0;
+    req.on("data", (buff) => {
+      reqData.push(buff);
+      size += buff.length;
+    });
+    req.on("end", (buff) => {
+      const data = Buffer.concat(reqData, size);
+      // console.log("data:", size, data.toString());
+      res.end(`formdta: ${data.toString()}`);
+    });
   } else if (method === "OPTIONS" && url === "/api/user") {
     // 处理cookie
     res.setHeader("Access-Control-Allow-Credentials", "true");

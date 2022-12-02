@@ -8,19 +8,16 @@
   <title>Document</title>
   <script src="https://cdn.bootcdn.net/ajax/libs/axios/1.1.3/axios.js"></script>
   <style>
-    .box {}
-
-    .red {
-      background-color: red;
-    }
   </style>
 </head>
 
 <body>
   <div class="box">
-    <h1 class="red">axios</h1>
-    <h1 class="red">axios</h1>
-    <h1 class="red">axios</h1>
+    <!-- <h1 class="red">axios</h1> -->
+    <form action="/api/save" method="post">
+      <input type="text" name="abc" value="123">
+      <input type="submit" name="save">
+    </form>
   </div>
   <script>
     (async () => {
